@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/newsFragment">
+
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.manish.newsapp.NewsFragment"
+        android:label="News Fragment"
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_newsFragment_to_newsInfoFragment"
+            app:destination="@id/newsInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedNewsFragment"
+        android:name="com.manish.newsapp.SavedNewsFragment"
+        android:label="Saved News"
+        tools:layout="@layout/fragment_saved_news" >
+        <action
+            android:id="@+id/action_savedNewsFragment_to_newsInfoFragment"
+            app:destination="@id/newsInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsInfoFragment"
+        android:name="com.manish.newsapp.NewsInfoFragment"
+        android:label="News Information Fragment"
+        tools:layout="@layout/fragment_news_info" >
+        <argument
+            android:name="selected_article"
+            app:argType="com.manish.newsapp.data.model.Article" />
+    </fragment>
+</navigation>
